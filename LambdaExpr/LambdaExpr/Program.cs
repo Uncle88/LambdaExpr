@@ -6,6 +6,8 @@ namespace NewAnonimousLambdaExpr
 	public delegate int AccountLogin(string a);
 	public delegate bool IsValidPassword(string str1, string str2);
 
+	public delegate void CustomDelegate<T>(T Tvalue);
+
 	class MainClass
 	{
 		public static void Main(string[] args)
@@ -16,6 +18,9 @@ namespace NewAnonimousLambdaExpr
 
 			LoginService.SetLogin();
 			LoginService.SetPassword();
+
+			CustomDelegate<int> cd = (int Tvalue) => Console.WriteLine(Tvalue);
+			cd(11111);
 		}
 	}
 
@@ -55,6 +60,14 @@ namespace NewAnonimousLambdaExpr
 			}
 			else
 				Console.WriteLine("not success registration");
+		}
+	}
+
+	public class GenericDelete
+	{
+		public static void GenericMethod<T>(int a)
+		{
+			Console.WriteLine(a);
 		}
 	}
 }
