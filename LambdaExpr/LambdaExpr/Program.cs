@@ -21,6 +21,12 @@ namespace NewAnonimousLambdaExpr
 
 			CustomDelegate<int> cd = (int Tvalue) => Console.WriteLine(Tvalue);
 			cd(11111);
+
+			CustomDelegate<double> cd2 = (double Tvalue) => Console.WriteLine(Tvalue + 2);
+			cd2(0.1);
+
+			CustomDelegate<string> cd3 = (string Tvalue) => Console.WriteLine(Tvalue.IndexOf('a'));
+			cd3("aaa");
 		}
 	}
 
@@ -60,14 +66,6 @@ namespace NewAnonimousLambdaExpr
 			}
 			else
 				Console.WriteLine("not success registration");
-		}
-	}
-
-	public class GenericDelete
-	{
-		public static void GenericMethod<T>(int a)
-		{
-			Console.WriteLine(a);
 		}
 	}
 }
